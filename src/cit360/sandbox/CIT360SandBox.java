@@ -47,14 +47,14 @@ if (null != conn) {
 
     try {
         Statement stmt = conn.createStatement();
-        String query = "select * from products ;";
-    //person is the table name
+        String query = "select * from movies ;";
+    //movies is the table name
         ResultSet rs = stmt.executeQuery(query);
         while (rs.next()) {
             String name = rs.getObject(2).toString();
-            String price = rs.getObject(5).toString();
-            System.out.println("Your favorite comic is " + name + " and it costs $" + price);
-    //Person table has name and gender column
+            String price = rs.getObject(6).toString();
+            System.out.println("Currently " + name + " is playing" + " and it costs $" + price);
+    //movies table has name and price columns
 
         }
     } catch (SQLException e) {
