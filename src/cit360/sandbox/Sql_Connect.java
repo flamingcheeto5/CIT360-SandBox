@@ -17,7 +17,7 @@ import java.sql.Statement;
  */
 public class Sql_Connect {
 
-  public void connect(){
+  public final static void connect(){
     Connection conn = null;
 try {
     conn =
@@ -46,8 +46,8 @@ try {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 String name = rs.getObject(2).toString();
-                String price = rs.getObject(6).toString();
-                System.out.println("Currently " + name + " is playing" + " and it costs $" + price);
+                String Start_Time = rs.getObject(3).toString();
+                System.out.println(name + ": " + Start_Time);
         //movies table has name and price columns
 
         }

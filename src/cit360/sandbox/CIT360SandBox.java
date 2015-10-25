@@ -5,6 +5,7 @@
  */
 package cit360.sandbox;
 
+import static java.lang.Compiler.command;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,21 +23,31 @@ import java.util.Scanner;
  */
 public class CIT360SandBox {
     public static String firstName;
-    
+    static Iterable<String[]> Selections;
+
+    static void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    /**
+     *
+     */
+    public final static Sql_Connect Sql_Connect = new Sql_Connect();
+    public final static Menu App = new Menu(); 
     /**
      *
      * @param args
      */
     public static void main(String[] args){
+        
             Scanner input = new Scanner(System.in);   // gets input using scanner and puts it into variable firstName
             System.out.println("What is your name?");
             CIT360SandBox.firstName = input.next();
             
             System.out.println("Welcome " + firstName + "!");
-    Sql_Connect Sql_Connect = new Sql_Connect();
-            Sql_Connect.connect();
-    }    
-}
+            
+            CIT360SandBox.App.mainMenu(); 
+    }
+   }    
     /**public static void main(String[] args) {     
       List moses = new ArrayList();  // A List contains instances of Object. Upcast ArrayList to List
       moses.add("Genesis");            // add() takes Object. String upcast to Object implicitly
