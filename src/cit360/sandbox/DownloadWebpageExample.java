@@ -9,7 +9,7 @@ import java.net.URL;
  
 public class DownloadWebpageExample {
  
-  public static void main(String[] args) {
+  public static void DownloadWebpageExample(String[] args) {
     try {
       URL url = new URL("http://www.vogella.com");
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
