@@ -11,9 +11,11 @@ public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
     public final static HTTPConnection HTTPConnection = new HTTPConnection(); 
+    public final static JacksonExample JacksonExample = new JacksonExample(); 
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
+        {"J", "JSON Example"}, 
         {"M", "Show Movie Times"},
         {"L", "Movie Theatre List"},
         {"P", "Movie Ticket Prices"},
@@ -36,6 +38,10 @@ public final static String [][] Selection = {
                    CIT360SandBox.Sql_Connect.urltest(); 
                    break; 
                     
+                   case "J":
+                   CIT360SandBox.Sql_Connect.jsonExample();
+                   break; 
+                       
                    case "M":
                    CIT360SandBox.Sql_Connect.connect(); 
                    break;    
