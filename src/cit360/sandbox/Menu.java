@@ -6,14 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-
 
 public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
-    public final static HttpURLConnectionExample HttpURLConnectionExample = new HttpURLConnectionExample();
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
@@ -22,7 +18,7 @@ public final static String [][] Selection = {
         {"P", "Movie Ticket Prices"},
         {"X", "Exit Program"}
     };      
-    public final static void mainMenu(){
+    public final static void mainMenu() throws Exception{
 
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -36,7 +32,7 @@ public final static String [][] Selection = {
                 switch (command){
                                     
                    case "C":
-                   CIT360SandBox.HttpURLConnectionExample.test(); 
+                   CIT360SandBox.Sql_Connect.test(); 
                    break; 
                     
                    case "M":

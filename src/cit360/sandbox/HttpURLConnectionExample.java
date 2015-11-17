@@ -20,7 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class HttpURLConnectionExample {
     private final String USER_AGENT = "Mozilla/5.0";
 
-	public final static void test() throws Exception {
+	public final static void test() throws Exception{
 
 		HttpURLConnectionExample http = new HttpURLConnectionExample();
 
@@ -50,15 +50,15 @@ public class HttpURLConnectionExample {
 		System.out.println("\nSending 'GET' request to URL : " + url);
 		System.out.println("Response Code : " + responseCode);
 
-		BufferedReader in = new BufferedReader(
-		        new InputStreamReader(con.getInputStream()));
-		String inputLine;
-		StringBuffer response = new StringBuffer();
-
-		while ((inputLine = in.readLine()) != null) {
+                StringBuilder response;
+                try (BufferedReader in = new BufferedReader(
+                        new InputStreamReader(con.getInputStream()))) {
+            String inputLine;
+            response = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
 			response.append(inputLine);
 		}
-		in.close();
+        }
 
 		//print result
 		System.out.println(response.toString());
@@ -81,25 +81,25 @@ public class HttpURLConnectionExample {
 		
 		// Send post request
 		con.setDoOutput(true);
-		DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-		wr.writeBytes(urlParameters);
-		wr.flush();
-		wr.close();
+        try (DataOutputStream wr = new DataOutputStream(con.getOutputStream())) {
+            wr.writeBytes(urlParameters);
+            wr.flush();
+        }
 
 		int responseCode = con.getResponseCode();
 		System.out.println("\nSending 'POST' request to URL : " + url);
 		System.out.println("Post parameters : " + urlParameters);
 		System.out.println("Response Code : " + responseCode);
 
-		BufferedReader in = new BufferedReader(
-		        new InputStreamReader(con.getInputStream()));
-		String inputLine;
-		StringBuffer response = new StringBuffer();
-
-		while ((inputLine = in.readLine()) != null) {
+                StringBuffer response;
+                try (BufferedReader in = new BufferedReader(
+                        new InputStreamReader(con.getInputStream()))) {
+            String inputLine;
+            response = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
 			response.append(inputLine);
 		}
-		in.close();
+        }
 		
 		//print result
 		System.out.println(response.toString());
