@@ -19,13 +19,14 @@ import javax.net.ssl.HttpsURLConnection;
  * @author dbanks
  */
  
-public class HttpURLConnectionExample {
+public class Http_Connection {
+
 
 	private final String USER_AGENT = "Mozilla/5.0";
 
-	public static void connection(String[] args) throws Exception {
+	public static void connectiontest(String[] args) throws Exception {
 
-		HttpURLConnectionExample http = new HttpURLConnectionExample();
+		Http_Connection http = new Http_Connection();
 
 		System.out.println("Testing 1 - Send Http GET request");
 		http.sendGet();
@@ -38,7 +39,7 @@ public class HttpURLConnectionExample {
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-		String url = "http://www.google.com";
+		String url = "http://www.google.com/search?q=mkyong";
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();

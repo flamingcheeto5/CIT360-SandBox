@@ -12,7 +12,9 @@ import org.hibernate.Session;
 
 public class Menu
 {
-public final static Sql_Connect Sql_Connect = new Sql_Connect();	
+    public final static Sql_Connect Sql_Connect = new Sql_Connect();
+    public final static Http_Connection Http_Connection = new Http_Connection(); 
+    
 public final static String [][] Selection = {
         {"M", "Show Movie Times"},
         {"L", "Movie Theatre List"},
@@ -34,8 +36,12 @@ public final static String [][] Selection = {
                    case "M":
                    CIT360SandBox.Sql_Connect.connect(); 
                    break;
-                
-                 case "L": 
+                   
+                   case "C":
+                   CIT360SandBox.Http_Connection.connectiontest(); 
+                   break;    
+                 
+                   case "L": 
                     Menu.purchaseTicketsCompanyList();
                     break;
                     
