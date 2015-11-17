@@ -25,7 +25,6 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import static javafx.scene.input.KeyCode.R;
 import javax.naming.Context;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
