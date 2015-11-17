@@ -10,8 +10,7 @@ import java.util.TreeMap;
 public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
-    public final static HTTPConnection HTTPConnection = new HTTPConnection(); 
-    public final static JacksonExample JacksonExample = new JacksonExample(); 
+    public final static HTTPConnection HTTPConnection = new HTTPConnection();  
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
