@@ -13,9 +13,10 @@ import org.hibernate.Session;
 public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
-    public final static Http_Connection Http_Connection = new Http_Connection(); 
+    public final static HttpURLConnectionExample HttpURLConnectionExample = new HttpURLConnectionExample();
     
 public final static String [][] Selection = {
+        {"C", "HTTP Connection Test"},
         {"M", "Show Movie Times"},
         {"L", "Movie Theatre List"},
         {"P", "Movie Ticket Prices"},
@@ -35,7 +36,7 @@ public final static String [][] Selection = {
                 switch (command){
                                     
                    case "C":
-                   CIT360SandBox.Http_Connection.connectiontest(); 
+                   CIT360SandBox.HttpURLConnectionExample.test(); 
                    break; 
                     
                    case "M":

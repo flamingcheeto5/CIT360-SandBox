@@ -5,7 +5,6 @@
  */
 package cit360.sandbox;
 
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -18,15 +17,12 @@ import javax.net.ssl.HttpsURLConnection;
  *
  * @author dbanks
  */
- 
-public class Http_Connection {
+public class HttpURLConnectionExample {
+    private final String USER_AGENT = "Mozilla/5.0";
 
+	public final static void test() throws Exception {
 
-	private final String USER_AGENT = "Mozilla/5.0";
-
-	public static void connectiontest(String[] args) throws Exception {
-
-		Http_Connection http = new Http_Connection();
+		HttpURLConnectionExample http = new HttpURLConnectionExample();
 
 		System.out.println("Testing 1 - Send Http GET request");
 		http.sendGet();
@@ -37,7 +33,7 @@ public class Http_Connection {
 	}
 
 	// HTTP GET request
-	private void sendGet() throws Exception {
+	void sendGet() throws Exception {
 
 		String url = "http://www.google.com/search?q=mkyong";
 		
@@ -70,7 +66,7 @@ public class Http_Connection {
 	}
 	
 	// HTTP POST request
-	private void sendPost() throws Exception {
+	void sendPost() throws Exception {
 
 		String url = "https://selfsolve.apple.com/wcResults.do";
 		URL obj = new URL(url);

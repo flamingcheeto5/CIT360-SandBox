@@ -62,7 +62,6 @@ public class CIT360SandBox {
             CIT360SandBox.App.mainMenu();
 
         }
-
 }
         
             /*Scanner input = new Scanner(System.in);   // gets input using scanner and puts it into variable firstName
