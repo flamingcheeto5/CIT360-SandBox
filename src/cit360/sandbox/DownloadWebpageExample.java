@@ -35,7 +35,7 @@ public class DownloadWebpageExample {
     return sb.toString();
   }
   
-    public boolean isNetworkAvailable() {
+ /*   public boolean isNetworkAvailable() {
     ConnectivityManager cm = (ConnectivityManager) 
       getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = cm.getActiveNetworkInfo();
@@ -45,5 +45,5 @@ public class DownloadWebpageExample {
         return true;
     }
     return false;
-} 
+} */
 } 
