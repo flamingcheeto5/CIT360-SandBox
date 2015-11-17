@@ -33,12 +33,13 @@ public final static String [][] Selection = {
                 command = command.trim().toUpperCase(); //changes input to always be uppercase, in case someone inputs a lowercase letter. 
                 
                 switch (command){
-                   case "M":
-                   CIT360SandBox.Sql_Connect.connect(); 
-                   break;
-                   
+                                    
                    case "C":
                    CIT360SandBox.Http_Connection.connectiontest(); 
+                   break; 
+                    
+                   case "M":
+                   CIT360SandBox.Sql_Connect.connect(); 
                    break;    
                  
                    case "L": 
