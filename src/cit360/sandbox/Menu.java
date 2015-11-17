@@ -10,6 +10,7 @@ import java.util.TreeMap;
 public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
+    public final static HTTPConnection HTTPConnection = new HTTPConnection(); 
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
@@ -32,7 +33,7 @@ public final static String [][] Selection = {
                 switch (command){
                                     
                    case "C":
-                   CIT360SandBox.Sql_Connect.test(); 
+                   CIT360SandBox.Sql_Connect.urltest(); 
                    break; 
                     
                    case "M":
