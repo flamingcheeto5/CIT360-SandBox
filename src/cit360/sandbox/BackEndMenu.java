@@ -5,10 +5,6 @@
  */
 package cit360.sandbox;
 
-import JSONExample.Categories;
-import JSONExample.OrderItem;
-import JSONExample.Customer;
-import JSONExample.Order;
 import MVCExample.Student;
 import MVCExample.StudentDao;
 import MVCExample.StudentDaoImpl;
