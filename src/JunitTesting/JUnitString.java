@@ -9,6 +9,7 @@ package JunitTesting;
  *
  * @author DBanks
  */
+
     public class JUnitString {
 
 	public String concatenate(String one, String two){

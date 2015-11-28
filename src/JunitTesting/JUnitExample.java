@@ -4,8 +4,7 @@ public class JUnitExample {
 
 	private int first;
 	private int second;
-	
-	
+        
 	public JUnitExample(int one, int two) {
 		first = one;
 		second = two;
