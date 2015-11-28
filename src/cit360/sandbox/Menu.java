@@ -11,10 +11,12 @@ public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
     public final static HTTPConnection HTTPConnection = new HTTPConnection();  
+    public final static smtpExample smtpExample = new smtpExample();
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
         {"J", "JSON Example"}, 
+        {"I", "I/O SMTP example"},
         {"M", "Show Movie Times"},
         {"L", "Movie Theatre List"},
         {"P", "Movie Ticket Prices"},
@@ -39,6 +41,10 @@ public final static String [][] Selection = {
                     
                    case "J":
                    CIT360SandBox.Sql_Connect.jsonExample();
+                   break; 
+                       
+                   case "I":
+                   CIT360SandBox.Sql_Connect.smtpExample();
                    break; 
                        
                    case "M":

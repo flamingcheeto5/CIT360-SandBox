@@ -11,12 +11,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.Socket;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -122,7 +125,65 @@ public class Sql_Connect {
             e.printStackTrace(); //If you want further info on failure...
         }
     }
-  }  
+  }
+      public static final void smtpExample() {
+// declaration section:
+// smtpClient: our client socket
+// os: output stream
+// is: input stream
+        Socket smtpSocket = null;  
+        DataOutputStream os = null;
+        DataInputStream is = null;
+// Initialization section:
+// Try to open a socket on port 25
+// Try to open input and output streams
+        try {
+            smtpSocket = new Socket("localhost", 25);
+            os = new DataOutputStream(smtpSocket.getOutputStream());
+            is = new DataInputStream(smtpSocket.getInputStream());
+        } catch (UnknownHostException e) {
+            System.err.println("Did not recognize server: localhost");
+        } catch (IOException e) {
+            System.err.println("Was not able to open I/O connection to: localhost");
+        }
+// If everything has been initialized then we want to write some data
+// to the socket we have opened a connection to on port 25
+    if (smtpSocket != null && os != null && is != null) {
+            try {
+// The capital string before each colon has a special meaning to SMTP
+// you may want to read the SMTP specification, RFC1822/3
+        os.writeBytes("HELO\n");    
+                os.writeBytes("MAIL From: david.banks0889@gmail.com\n");
+                os.writeBytes("RCPT To: david.banks0889@gmail.com\n");
+                os.writeBytes("DATA\n");
+                os.writeBytes("From: david.banks0889@gmail.com\n");
+                os.writeBytes("Subject: TEST\n");
+                os.writeBytes("Hi there\n"); // message body
+                os.writeBytes("\n.\n");
+        os.writeBytes("QUIT");
+// keep on reading from/to the socket till we receive the "Ok" from SMTP,
+// once we received that then we want to break.
+                String responseLine;
+                while ((responseLine = is.readLine()) != null) {
+                    System.out.println("Server: " + responseLine);
+                    if (responseLine.contains("Ok")) {
+                      break;
+                    }
+                }
+// clean up:
+// close the output stream
+// close the input stream
+// close the socket
+        os.close();
+                is.close();
+                smtpSocket.close();   
+            } catch (UnknownHostException e) {
+                System.err.println("Trying to connect to unknown host: " + e);
+            } catch (IOException e) {
+                System.err.println("IOException:  " + e);
+            }
+        }
+    }
   public final static void connect(){
     Connection conn = null;
 try {
