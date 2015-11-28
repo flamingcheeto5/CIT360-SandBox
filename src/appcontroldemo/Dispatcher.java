@@ -11,30 +11,30 @@ package appcontroldemo;
  */
 public class Dispatcher
 {
-  private FirstPage  first;
-  private SecondPage second;
-  private ThirdPage  third;
+  private PeanutsReview  Peanuts;
+  private CreedReview Creed;
+  private SpectreReview  Spectre;
 
   public Dispatcher()
   {
-    first = new FirstPage();
-    second = new SecondPage();
-    third = new ThirdPage();
+    Peanuts = new PeanutsReview();
+    Creed = new CreedReview();
+    Spectre = new SpectreReview();
   }
 
   public void dispatch( String request )
   {
-    if( request.equalsIgnoreCase("FIRST") )
+    if( request.equalsIgnoreCase("Peanuts") )
     {
-      first.show();
+      Peanuts.show();
     }
-    else if( request.equalsIgnoreCase("SECOND") )
+    else if( request.equalsIgnoreCase("Creed") )
     {
-      second.show();
+      Creed.show();
     }
     else
     {
-      third.show();
+      Spectre.show();
     }
   }
 }
