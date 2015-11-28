@@ -5,6 +5,9 @@
  */
 package cit360.sandbox;
 
+import MVCExample.Student;
+import MVCExample.StudentDao;
+import MVCExample.StudentDaoImpl;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -48,9 +51,9 @@ public class BackEndMenu {
 
         Customer c1 = new Customer(1,"David", "Banks");
 
-        Item i1 = new Item(1, "Tablet XYZ", Categories.HARDWARE, 199.0);
-        Item i2 = new Item(2, "Jackson Tutorial", Categories.BOOK, 19.00);
-        Item i3 = new Item(3, "Running shoes", Categories.SPORT, 65.50);
+        Item i1 = new Item(1, "Whinnie the Pooh", Categories.CHILDREN, 199.0);
+        Item i2 = new Item(2, "The Notebook", Categories.ROMANCE, 19.00);
+        Item i3 = new Item(3, "Spectre", Categories.ACTION, 65.50);
 
         OrderItem oi1 = new OrderItem(2,i1);
         OrderItem oi2 = new OrderItem(3,i2);
@@ -96,26 +99,7 @@ public class BackEndMenu {
         System.out.println(o2);
 
 
-    }
-        
-    public static final void DaoPatternDemo() {
-      StudentDao studentDao = new StudentDaoImpl();
-
-      //print all students
-      for (Student student : studentDao.getAllStudents()) {
-         System.out.println("Student: [RollNo : " + student.getRollNo() + ", Name : " + student.getName() + " ]");
-      }
-
-
-      //update student
-      Student student =studentDao.getAllStudents().get(0);
-      student.setName("Michael");
-      studentDao.updateStudent(student);
-
-      //get the student
-      studentDao.getStudent(0);
-      System.out.println("Student: [RollNo : " + student.getRollNo() + ", Name : " + student.getName() + " ]");		
-   }    
+    }    
         
     public static final void urltest() {
   URL url;

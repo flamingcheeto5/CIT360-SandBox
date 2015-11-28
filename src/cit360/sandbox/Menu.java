@@ -18,7 +18,6 @@ public final static String [][] Selection = {
         {"J", "JSON Example"}, 
         {"I", "I/O SMTP example"},
         {"M", "Show Movie Times"},
-        {"MVC", "MVC Example"},
         {"L", "Movie Theatre List"},
         {"P", "Movie Ticket Prices"},
         {"X", "Exit Program"}
@@ -50,11 +49,7 @@ public final static String [][] Selection = {
                        
                    case "M":
                    CIT360SandBox.Sql_Connect.connect(); 
-                   break;    
-                 
-                   case "MVC":
-                   CIT360SandBox.Sql_Connect.DaoPatternDemo();
-                   break;        
+                   break;      
                        
                    case "L": 
                     Menu.purchaseTicketsCompanyList();

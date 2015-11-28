@@ -10,5 +10,5 @@ package cit360.sandbox;
  * @author dbanks
  */
 public enum Categories {
-    SPORT, BOOK, HARDWARE
+    ACTION, ROMANCE, CHILDREN
 }
