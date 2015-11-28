@@ -1,4 +1,4 @@
-package JunitTesting;
+
 
 public class JUnitExample {
 
