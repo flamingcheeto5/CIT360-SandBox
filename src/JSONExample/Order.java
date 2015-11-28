@@ -1,4 +1,4 @@
-package cit360.sandbox;
+package JSONExample;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

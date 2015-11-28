@@ -15,7 +15,6 @@ public class Menu
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
-        {"J", "JSON Example"}, 
         {"I", "I/O SMTP example"},
         {"M", "Show Movie Times"},
         {"L", "Movie Theatre List"},
@@ -37,10 +36,6 @@ public final static String [][] Selection = {
                                     
                    case "C":
                    CIT360SandBox.Sql_Connect.urltest(); 
-                   break; 
-                    
-                   case "J":
-                   CIT360SandBox.Sql_Connect.jsonExample();
                    break; 
                        
                    case "I":

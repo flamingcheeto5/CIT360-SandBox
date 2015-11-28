@@ -5,6 +5,7 @@
  */
 package cit360.sandbox;
 
+import JSONExample.Categories;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 /**
