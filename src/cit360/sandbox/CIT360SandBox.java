@@ -48,7 +48,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class CIT360SandBox {
     public static String firstName; 
     static Iterable<String[]> Selections; 
-    public final static Sql_Connect Sql_Connect = new Sql_Connect(); 
+    public final static BackEndMenu Sql_Connect = new BackEndMenu(); 
     public final static Menu App = new Menu(); 
 
 	public static void main(String[] args) throws Exception {

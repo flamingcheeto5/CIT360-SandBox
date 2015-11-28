@@ -9,7 +9,7 @@ import java.util.TreeMap;
 
 public class Menu
 {
-    public final static Sql_Connect Sql_Connect = new Sql_Connect();
+    public final static BackEndMenu BackEndMenu = new BackEndMenu();
     public final static HTTPConnection HTTPConnection = new HTTPConnection();  
 
     

@@ -37,7 +37,7 @@ import org.json.JSONObject;
  *
  * @author DBanks
  */
-public class Sql_Connect {
+public class BackEndMenu {
 
         public static final void jsonExample() {
         ObjectMapper mapper = new ObjectMapper();
