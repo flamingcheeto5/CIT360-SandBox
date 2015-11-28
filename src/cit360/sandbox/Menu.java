@@ -11,13 +11,14 @@ public class Menu
 {
     public final static Sql_Connect Sql_Connect = new Sql_Connect();
     public final static HTTPConnection HTTPConnection = new HTTPConnection();  
-    public final static smtpExample smtpExample = new smtpExample();
+
     
 public final static String [][] Selection = {
         {"C", "HTTP Connection Test"},
         {"J", "JSON Example"}, 
         {"I", "I/O SMTP example"},
         {"M", "Show Movie Times"},
+        {"MVC", "MVC Example"},
         {"L", "Movie Theatre List"},
         {"P", "Movie Ticket Prices"},
         {"X", "Exit Program"}
@@ -51,6 +52,10 @@ public final static String [][] Selection = {
                    CIT360SandBox.Sql_Connect.connect(); 
                    break;    
                  
+                   case "MVC":
+                   CIT360SandBox.Sql_Connect.DaoPatternDemo();
+                   break;        
+                       
                    case "L": 
                     Menu.purchaseTicketsCompanyList();
                     break;
