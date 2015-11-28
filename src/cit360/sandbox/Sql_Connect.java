@@ -43,7 +43,7 @@ public class Sql_Connect {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
         mapper.setDateFormat(sdf);
 
-        Customer c1 = new Customer(1,"Davis", "Molinari");
+        Customer c1 = new Customer(1,"David", "Banks");
 
         Item i1 = new Item(1, "Tablet XYZ", Categories.HARDWARE, 199.0);
         Item i2 = new Item(2, "Jackson Tutorial", Categories.BOOK, 19.00);
@@ -98,7 +98,7 @@ public class Sql_Connect {
   URL url;
     HttpURLConnection urlConnection = null;
     try {
-        url = new URL("http://marvelcomicsuniverse.com/index1.php");
+        url = new URL("http://marvelcomicsuniverse.com");
 
         urlConnection = (HttpURLConnection) url
                 .openConnection();

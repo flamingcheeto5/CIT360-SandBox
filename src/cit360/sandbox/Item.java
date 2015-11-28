@@ -59,6 +59,6 @@ public class Item {
 
     @Override
     public String toString(){
-        return this.name + " (unit price: " + this.price + " - cat: " + this.cat + ")" ;
+        return this.name + " (Unit Price: " + this.price + " - Category: " + this.cat + ")" ;
     }
 }
