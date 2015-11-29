@@ -7,10 +7,10 @@ and open the template in the editor.
 <html>
 <head>
 <script>
-function ajax_get_json(){
+function json_example_1(){
 	var results = document.getElementById("results");
     var hr = new XMLHttpRequest();
-    // Gets the data from JSONExample1
+    // Pulls data from JSONExample1
     
     hr.open("GET", "JSONExample1.json", true);
     hr.setRequestHeader("Content-type", "application/json", true);
@@ -18,15 +18,15 @@ function ajax_get_json(){
 	    if(hr.readyState === 4 && hr.status === 200) {
 		    var data = JSON.parse(hr.responseText);
 			results.innerHTML = "";
-			// Loop that will get every object and display it
+			// Loop that pulls data from the .json file
 			for(var obj in data){
 				results.innerHTML += data[obj].actor+" is from "+data[obj].from+" and is staring in "+data[obj].movie+"<hr />";
 			}
 	    }
     };
     hr.send(null);
-    //Using annimated Gif 
-    results.innerHTML = '<img src="ajax-loader.gif" alt="Loading..." /> Requesting...';
+    //Display Loading and Requesting of results 
+    results.innerHTML = '< alt="Loading..." /> Requesting...';
 }
 </script>
 </head>
