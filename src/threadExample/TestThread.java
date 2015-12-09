@@ -1,5 +1,15 @@
 package threadExample;
 
+public class TestThread {
+   public static void main(String args[]) {
+   
+      ThreadDemo T1 = new ThreadDemo( "Thread-1");
+      T1.start();
+      
+      ThreadDemo T2 = new ThreadDemo( "Thread-2");
+      T2.start();
+   }   
+}
 class ThreadDemo extends Thread {
    private Thread t;
    private String threadName;
@@ -34,13 +44,3 @@ class ThreadDemo extends Thread {
 
 }
 
-public class TestThread {
-   public static void main(String args[]) {
-   
-      ThreadDemo T1 = new ThreadDemo( "Thread-1");
-      T1.start();
-      
-      ThreadDemo T2 = new ThreadDemo( "Thread-2");
-      T2.start();
-   }   
-}

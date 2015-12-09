@@ -31,6 +31,9 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeMap;
 import javax.naming.Context;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
@@ -41,7 +44,7 @@ import org.json.JSONObject;
  * @author DBanks
  */
 public class BackEndMenu {    
-        
+          
     public static final void urltest() {
   URL url;
     HttpURLConnection urlConnection = null;
@@ -169,6 +172,52 @@ try {
         }
             System.out.println("Error in fetching data");
     }
-  }       
+  }
+    public static void purchaseTicketsCompanyList(){
+      List companyList = new ArrayList();  // A List contains instances of Object. Upcast ArrayList to List
+      companyList.add("AMC Theatres");            // add() takes Object. String upcast to Object implicitly
+      companyList.add("Cinemark Theatres");
+      companyList.add("Megaplex Theatres");
+      companyList.add("Regal Entertainment Theatres");
+      companyList.add("Fandango");
+      companyList.add("Moviefone");
+      
+      Iterator iter = companyList.iterator();
+      while (iter.hasNext()) {      // any more element
+         // Retrieve the next element, explicitly downcast from Object back to String
+         String str = (String)iter.next();
+         System.out.println(str);
+
+      }
+    }
+    
+    public static void ticketPrices() {
+		TreeMap ageGroup = new TreeMap();
+		
+		// Add some ageGroup.
+		ageGroup.put("Adult", 8.75);
+		ageGroup.put("Child", 5.50);
+		ageGroup.put("Senior Citizen", 5.25);
+		ageGroup.put("Military Veteran", 5.00);
+		
+		// Iterate over all ageGroup, using the keySet method.
+		for(Object key: ageGroup.keySet())
+			System.out.println(key + " - $" + ageGroup.get(key));
+		System.out.println();
+		
+		System.out.println("Highest key: " + ageGroup.lastKey());
+		System.out.println("Lowest key: " + ageGroup.firstKey());
+		
+		System.out.println("\nPrinting all values: ");
+		for(Object val: ageGroup.values())
+			System.out.println("$" + val);
+		System.out.println();
+		
+		// Clear all values.
+		ageGroup.clear();
+		
+		// Equals to zero.
+		System.out.println("After clear operation, size: " + ageGroup.size());
+    }
 }
 
